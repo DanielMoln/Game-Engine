@@ -1,9 +1,20 @@
 package com.danielmoln;
 
+import com.danielmoln.window.DisplayManager;
+import org.lwjgl.opengl.Display;
+
 public class Main {
-    public static void main(String[] args) {
-        for (int i = 1; i <= 5; i++) {
-            System.out.println("i = " + i);
+    public static void main(String[] args)
+    {
+        DisplayManager.createDisplay();
+
+        while (!Display.isCloseRequested())
+        {
+            // game logic
+            // render
+            DisplayManager.updateDisplay();
         }
+
+        DisplayManager.closeDisplay();
     }
 }
